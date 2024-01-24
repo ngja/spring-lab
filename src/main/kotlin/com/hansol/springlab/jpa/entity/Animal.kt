@@ -1,13 +1,14 @@
 package com.hansol.springlab.jpa.entity
 
+import com.hansol.springlab.jpa.constants.EatingHabits
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "animal")
+@Table(name = "animals")
 class Animal(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
+    val animalId: Long = 0,
 
     @Column
     val name: String,
@@ -16,8 +17,12 @@ class Animal(
     val scientificName: String,
 
     @Column
-    val order: String,
+    val family: String,
 
     @Column
-    val family: String,
+    @Enumerated(EnumType.STRING)
+    val eatingHabits: EatingHabits,
+
+    @Column
+    val lifespan: Int,
 )

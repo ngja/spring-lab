@@ -34,8 +34,13 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	implementation("org.postgresql:postgresql:42.7.1")
+	implementation("io.github.oshai:kotlin-logging-jvm:6.0.3")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("io.kotest:kotest-runner-junit5:5.8.0")
+	testImplementation("io.kotest:kotest-assertions-core:5.8.0")
+	testImplementation("io.kotest:kotest-property:5.8.0")
+	testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.3")
 	testImplementation("io.projectreactor:reactor-test")
 }
 
