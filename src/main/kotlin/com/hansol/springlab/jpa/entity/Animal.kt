@@ -25,4 +25,10 @@ class Animal(
 
     @Column
     val lifespan: Int,
-)
+
+
+) {
+    override fun toString(): String {
+        return "Animal(animalId=$animalId, name=$name, scientificName=$scientificName, family=$family, eatingHabits=$eatingHabits, lifespan=$lifespan)"
+    }
+}
