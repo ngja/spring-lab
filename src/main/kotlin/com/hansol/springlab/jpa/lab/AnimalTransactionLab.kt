@@ -17,7 +17,7 @@ class AnimalTransactionLab(
         val firstQuery = animalRepository.findById(1L)
         logger.info { "before sleep $firstQuery" }
         logger.info { "start sleep 10 seconds" }
-        Thread.sleep(10_000)
+        Thread.sleep(5_000)
         logger.info { "finish sleep 10 seconds" }
         // update animals set lifespan=70 where animal_id=1;
         logger.info { "after sleep $firstQuery" }
@@ -27,15 +27,6 @@ class AnimalTransactionLab(
 
     @Transactional
     fun findUpdateAndFindAgainWithTransactional() {
-        // 1,elephant,elephantidae,elephantidae,HERBIVORE,65
-        val firstQuery = animalRepository.findById(1L)
-        logger.info { "before sleep $firstQuery" }
-        logger.info { "start sleep 10 seconds" }
-        Thread.sleep(10_000)
-        logger.info { "finish sleep 10 seconds" }
-        // update animals set lifespan=70 where animal_id=1;
-        logger.info { "after sleep $firstQuery" }
-        val secondQuery = animalRepository.findById(1L)
-        logger.info { secondQuery } // 결과: lifespan=65
+        findUpdateAndFindAgain()
     }
 }

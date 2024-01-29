@@ -12,7 +12,7 @@ class AnimalTransactionLabTest(
     val animalTransactionLab: AnimalTransactionLab,
 ) : StringSpec({
 
-    "find, sleep, update, find again" {
+    "조회 -> 외부 업데이트 -> 조회 업데이트 내용 반영" {
         animalTransactionLab.findUpdateAndFindAgain()
         /*
         Hibernate: select a1_0.animal_id,a1_0.eating_habits,a1_0.family,a1_0.lifespan,a1_0.name,a1_0.scientific_name from animals a1_0 where a1_0.animal_id=?
@@ -26,7 +26,7 @@ class AnimalTransactionLabTest(
          */
     }
 
-    "find, sleep, update, find again with transaction" {
+    "조회 -> 외부 업데이트 -> 조회 1차 캐시 결과 그대로 응답" {
         animalTransactionLab.findUpdateAndFindAgainWithTransactional()
         /*
         조회 쿼리

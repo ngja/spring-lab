@@ -24,7 +24,7 @@ class Animal(
     val eatingHabits: EatingHabits,
 
     @Column
-    val lifespan: Int,
+    var lifespan: Int,
 
 
 ) {
